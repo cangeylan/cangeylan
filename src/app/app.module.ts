@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PlayersComponent } from './players/players.component';
 import { TopComponent } from './top/top.component';
+import { PlayerDetailComponent } from './player-detail/player-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     PlayersComponent,
-    TopComponent],
+    TopComponent,
+    PlayerDetailComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

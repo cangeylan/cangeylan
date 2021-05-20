@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Player } from '../models/player';
+import { PlayerService } from '../player.service';
 
 @Component({
   selector: 'app-top',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopComponent implements OnInit {
 
-  constructor() { }
+  players: Player[] = [];
+  constructor(private playerService: PlayerService) { }
 
   ngOnInit(): void {
+    this.getTopThreePlayers();
   }
 
+  getTopThreePlayers(): void {
+    this.playerService.getPlayers().subscribe(players => this.players = players.sort((a, b) => b.point - a.point).slice(0, 3));
+  }
 }

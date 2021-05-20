@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+
+ol {
+  list-style: none;
+  counter-reset: my-awesome-counter;
+  margin: 0;
+  padding: 0;
+}
+ol li {
+  counter-increment: my-awesome-counter;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+ol li::before {
+  content: "0" counter(my-awesome-counter);
+  font-weight: bold;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  margin-left: 1rem;
+  font-family: 'Abril Fatface', serif;
+  line-height: 1;
+}
+
+
+
+body {
+  padding: 1rem;
+  font-family: sans-serif;
+}
