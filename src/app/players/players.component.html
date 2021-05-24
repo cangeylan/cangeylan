@@ -1,1 +1,26 @@
-<p>players works!</p>
+<div class="container-fluid mt-2">
+    <table class="table table-hover">
+        <thead>
+            <tr class="bg-secondary">
+                <th scope="col">Rank</th>
+                <th scope="col">Name</th>
+                <th scope="col">Country</th>
+                <th scope="col">Age</th>
+                <th scope="col">Points</th>
+                <th scope="col">Tournaments Played</th>
+                <th scope="col"> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let player of players ; index as i">
+                <th scope="row">{{i+1}}</th>
+                <td>{{player.name}}</td>
+                <td>{{player.country}}</td>
+                <td>{{player.age}}</td>
+                <td>{{player.point}}</td>
+                <td>{{player.tournamentsPlayed}}</td>
+                <td><a class="btn btn-danger">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

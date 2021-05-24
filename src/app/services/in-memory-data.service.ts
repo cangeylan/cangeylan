@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Player } from './models/player';
+import { Player } from '../models/player';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +8,7 @@ import { Player } from './models/player';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const players: Player[] = [
-      { id: 1, name: "Andy Murray", country: "US", age: 29, point: 11540, tournamentsPlayed: 17 },
+      { id: 1, name: "Andy Murray", country: "US", age: 29, point: 300, tournamentsPlayed: 17 },
       { id: 2, name: "Novak Ya", country: "Serbia", age: 29, point: 9750, tournamentsPlayed: 16 },
       { id: 3, name: "Stan Smth", country: "Canada", age: 24, point: 4000, tournamentsPlayed: 12 },
       { id: 4, name: "Milos Bla", country: "Greece", age: 21, point: 2000, tournamentsPlayed: 13 },

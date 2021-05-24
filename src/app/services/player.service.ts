@@ -1,13 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Player } from './models/player';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Player } from '../models/player';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlayerService {
+
 
   private playersUrl = 'api/players';
 
@@ -18,10 +19,13 @@ export class PlayerService {
   constructor(private http: HttpClient) { }
 
   getPlayers(): Observable<Player[]> {
-    return this.http.get<Player[]>(this.playersUrl)
-      .pipe(tap(_ => this.log('fetched players')), catchError(this.handleError<Player[]>('getPlayers', [])))
+    return this.http.get<Player[]>(this.playersUrl);
   }
 
+  getPlayer(id: number): Observable<Player> {
+    const url = `${this.playersUrl}/${id}`
+    return this.http.get<Player>(url);
+  }
 
   ////////Errors////////////
 

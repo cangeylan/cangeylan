@@ -1,1 +1,46 @@
-<p>player-detail works!</p>
+<div *ngIf="player" class="container">
+    <h3>Player detail</h3>
+    <!-- 
+    id: number;
+    name: string;
+    country: string;
+    age: number;
+    point: number;
+    tournamentsPlayed: number;
+     -->
+    <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Player ID</label>
+            <input class="form-control" id="player-id" [(ngModel)]="player.id" name="player.id" placeholder="Player ID"
+                readonly>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Player name</label>
+            <input class="form-control" id="player-name" [(ngModel)]="player.name" name="player.name"
+                placeholder="Player name">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Player country</label>
+            <input class="form-control" id="player-country" [(ngModel)]="player.country" name="player.country"
+                placeholder="Player country">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Player age</label>
+            <input class="form-control" id="player-age" [(ngModel)]="player.age" name="player.age"
+                placeholder="Player age">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Player point</label>
+            <input class="form-control" id="player-point" [(ngModel)]="player.point" name="player.point"
+                placeholder="Player point">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Tournaments Played</label>
+            <input class="form-control" id="player-tournamentsPlayed" [(ngModel)]="player.tournamentsPlayed"
+                name="player.tournamentsPlayed" placeholder="Player tournamentsPlayed">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
