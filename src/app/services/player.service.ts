@@ -27,6 +27,9 @@ export class PlayerService {
     return this.http.get<Player>(url);
   }
 
+  updatePlayer(player: Player): Observable<any> {
+    return this.http.put(this.playersUrl, player, this.httpOptions);
+  }
   ////////Errors////////////
 
   private handleError<T>(operation = 'operation', result?: T) {
